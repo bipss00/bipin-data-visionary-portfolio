@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import ProjectsSection from '../components/ProjectsSection';
+import ExperienceSection from '../components/ExperienceSection';
+import CertificationsSection from '../components/CertificationsSection';
+import ContactSection from '../components/ContactSection';
+import Navigation from '../components/Navigation';
+import { useEffect, useState } from 'react';
 
 const Index = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-deep-blue text-white' : 'bg-light-gray text-deep-blue'}`}>
+      <Navigation isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <HeroSection isDarkMode={isDarkMode} />
+      <AboutSection isDarkMode={isDarkMode} />
+      <ProjectsSection isDarkMode={isDarkMode} />
+      <ExperienceSection isDarkMode={isDarkMode} />
+      <CertificationsSection isDarkMode={isDarkMode} />
+      <ContactSection isDarkMode={isDarkMode} />
     </div>
   );
 };
