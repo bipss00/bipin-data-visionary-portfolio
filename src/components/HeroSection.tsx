@@ -68,8 +68,13 @@ const HeroSection = ({ isDarkMode }: HeroSectionProps) => {
             </div>
           </div>
 
+          {/* Name */}
+          <div className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-electric-blue to-electric-green bg-clip-text text-transparent animate-fade-in">
+            Bipin Chauhan
+          </div>
+
           {/* Animated Headline */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in">
             <span className="bg-gradient-to-r from-electric-blue via-electric-green to-electric-yellow bg-clip-text text-transparent">
               {typedText}
             </span>

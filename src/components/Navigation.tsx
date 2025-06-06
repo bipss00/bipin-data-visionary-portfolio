@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 
 interface NavigationProps {
   isDarkMode: boolean;
@@ -30,12 +29,8 @@ const Navigation = ({ isDarkMode, toggleDarkMode }: NavigationProps) => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-to-r from-electric-blue to-electric-green bg-clip-text text-transparent">
-            Bipin Chauhan
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center justify-center">
+          <div className="flex items-center space-x-8">
             <button 
               onClick={() => scrollToSection('about')} 
               className="hover:text-electric-blue transition-colors"
@@ -60,15 +55,6 @@ const Navigation = ({ isDarkMode, toggleDarkMode }: NavigationProps) => {
             >
               Contact
             </button>
-            
-            <Button
-              onClick={toggleDarkMode}
-              variant="outline"
-              size="sm"
-              className="ml-4"
-            >
-              {isDarkMode ? '☀️' : '🌙'}
-            </Button>
           </div>
         </div>
       </div>
